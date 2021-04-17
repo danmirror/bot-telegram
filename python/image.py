@@ -1,4 +1,5 @@
-from telegram.ext import Updater, InlineQueryHandler, CommandHandler
+
+from telegram.ext import Updater, CommandHandler, MessageHandler, Filters
 import requests
 import re
 
@@ -7,10 +8,9 @@ def get_url():
     url = contents['url']
     return url
 
-def bop(bot, update):
+def bop(update, context):
     url = get_url()
-    chat_id = update.message.chat_id
-    bot.send_photo(chat_id=chat_id, photo=url)
+    context.bot.send_photo(chat_id=update.effective_chat.id, photo = url)
 
 def main():
     updater = Updater('1652016015:AAFvl924BYzMzQGol7CcFlCZIhlJnyHKYEw')

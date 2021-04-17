@@ -1,9 +1,7 @@
 
 import logging
-
 from telegram import Update, ForceReply
 from telegram.ext import Updater, CommandHandler, MessageHandler, Filters, CallbackContext
-import requests
 
 # Enable logging
 logging.basicConfig(
@@ -12,16 +10,6 @@ logging.basicConfig(
 
 logger = logging.getLogger(__name__)
 
-def get_url():
-    contents = requests.get('https://random.dog/woof.json').json()    
-    url = contents['url']
-    return url
-def bop(update: Update, _: CallbackContext) -> None:
-    url = get_url()
-    print(url)
-    update.message.reply_text('pengen apa cuy!')
-    chat_id = update.message.chat_id
-    context.bot.send_photo(chat_id=chat_id, photo=url)
 
 # Define a few command handlers. These usually take the two arguments update and
 # context.
@@ -53,7 +41,6 @@ def main() -> None:
     dispatcher = updater.dispatcher
 
     # on different commands - answer in Telegram
-    dispatcher.add_handler(CommandHandler("bop",bop))
     dispatcher.add_handler(CommandHandler("start", start))
     dispatcher.add_handler(CommandHandler("help", help_command))
     # on non command i.e message - echo the message on Telegram
