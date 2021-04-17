@@ -1,7 +1,7 @@
 ## Telegram kit
 > reference of <a href="https://github.com/python-telegram-bot/python-telegram-bot">this</a>
 
-### prepare
+### Prepare
 - [x] get token in @botfather
 - START
 - newbot
@@ -10,7 +10,7 @@
 - [x] get id in @JsonDumpBot
 - /start
 
-### instalation
+### Instalation
 > python
 - pip install python-telegram-bot
 
@@ -24,5 +24,5 @@
 > example
 - curl -X POST "https://api.t.org/bot1652016015:AAFvl924BYzMzQGol7CcFlCZIhlJnyHKYEw/sendMessage" -d "chat_id=568105225&text=my sample text"
 
-### author 
+### Author 
 > <a href="https://me-danuandrean.github.io/"> Danu andrean </a>
